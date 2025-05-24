@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="imgs/logo.png" type="image/png">
+  <title>OneTech | Home</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+
+  <style>
+    :root {
+      --main-color: #2D2D27;
+      --sec-color: #F9F9F9;
+      --text-color: #FF9F00;
+      --bg-color: #2D2D27;
+      --primary-color: rgb(145, 94, 246);
+      --secondary-color: rgb(255, 255, 255);
+      --orange-color: #ff7e5f;
+      --danger-color: #ff0000;
+      --warning-color: rgb(144, 238, 144);
+      --price-hover: rgb(255, 101, 40);
+      --placeholder-color: rgb(186, 186, 186);
+    }
+
+    .hero {
+      background-image: url("imgs/xbanner_background.jpg.pagespeed.ic.8q2TqSthd0.webp");
+      background-size: cover;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .jump-btn {
+      margin-top: 30px;
+      margin-left: 30px;
+      padding: 16px 32px;
+      background-color: var(--text-color);
+      color: var(--sec-color);
+      border: 1px solid white;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      animation: jump 4s ease-in-out infinite;
+      box-shadow: 0 0 10px 2px var(--text-color);
+    }
+    .jump-btn:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes jump {
+      0% {
+        transform: translateY(0);
+      }
+
+      30% {
+        transform: translateY(-20px);
+      }
+
+      50% {
+        transform: translateY(0);
+      }
+
+      70% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .text-span{
+      color: #2D2D27;
+    }
+    .item-price {
+  color: var(--price-hover);
+}
+  </style>
+  <link rel="stylesheet" href="CSS/home-style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <!-- Start Nav Bar -->
+  <header class="header d-flex justify-content-center">
+    <div class="container-fluid mx-3">
+      <nav class="navbar navbar-expand-lg">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="imgs/logo.png" alt="OneTech Logo" style="height: 60px;"><span
+            class="fw-bold fs-2 text-white">OneTech</span>
+        </a>
+
+
+        <!-- Burger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          Menu &nbsp; <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav w-100 d-flex flex-column flex-md-row align-items-center gap-3">
+            <!-- Navigation Links -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+
+            <!-- Search -->
+            <li class="nav-item w-75">
+              <div class="search-container position-relative">
+                <form
+                  class="search-form d-flex align-items-center position-relative"
+                >
+                  <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input form-control"
+                    placeholder="Search products..."
+                  />
+                  <button type="button" class="search-button btn">
+                    <i class="fas fa-search search-icon"></i>
+                  </button>
+                </form>
+                <div id="searchResults" class="d-none w-100"></div>
+              </div>
+            </li>
+            <!-- Login/Register Button -->
+            <li  class="nav-item">
+              <div id="LogReg">
+                <button class="auth-btn"><a href="login.html">Login</a> | <a href="registration.html">Register</a>
+                </button>
+              </div>
+            </li>
+
+              <!-- Wishlist -->
+            <li id="wishlist" class="nav-item">
+              <a href="./wish.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <div class="position-relative text-white">
+                  <img src="imgs/heart.png" alt="wishlist" width="30" />
+                  <div class="num-wish">
+                    <span id="wishlistCount">0</span>
+                  </div>
+                </div>
+                <span class="nav-link p-0">Wishlist</span>
+              </a>
+            </li>
+            <!-- Cart -->
+            <li class="nav-item">
+              <a href="./Cart-Page.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <div class="position-relative">
+                  <img src="imgs/shopping-cart.png" alt="cart" width="30" />
+                  <div class="num-cart">0</div>
+                </div>
+                <span class="nav-link p-0">Cart</span>
+              </a>
+            </li>
+
+            <!-- Displayed Account Profile when Log in -->
+            <li class="nav-item">
+              <div class="dropdown" id="accProfile">
+                <button id="accName" class="auth-btn btn btn-secondary dropdown-toggle" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu">
+                  <li id="adminPanel"><a class="dropdown-item" href="adminPanel.html"><span><i
+                          class="fa-solid fa-user me-1"></i> Admin Panel</span></a></li>
+                  <li id="sellerPanel"><a class="dropdown-item" href="sellerPanel.html"><span><i
+                          class="fa-solid fa-user me-1"></i> Seller Panel</span></a></li>
+                  <li><a id="settings" class="dropdown-item" href="settings.html"><span><i class="fa-solid fa-gear  me-1"></i>
+                        Settings</span></a></li>
+                  <li><a id="orders" class="dropdown-item" href="orders.html"><span><i class="fa-solid fa-basket-shopping me-1"></i> Orders</span></a></li>
+                  <li><a class="dropdown-item" href=""><span id="signOut"><i
+                          class="fa-solid fa-right-from-bracket fa-flip-horizontal  me-1"></i> Sign out</span></a></li>
+                </ul>
+  
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- End Nav Bar -->
+
+  <!-- Dummy Sections -->
+  <section id="home" class="hero">
+    <div
+      class="container-fluif text-capitalize slider-content d-flex align-items-center justify-content-center flex-column flex-md-row">
+      <!--section content-->
+      <section id="home">
+        <div class="d-flex justify-content-center h-100">
+          <div class="hero-text">
+            <h1 class="text mt-5">NEW ERA OF SMARTPHONES</h1>
+            <div class="container d-flex flex-column">
+              <span class="p text-decoration-line-through fs-4 ms-3">EGP 79,999</span>
+              <span class="item-price fs-3 ms-3">EGP 77,999</span>
+              <h3 class="ms-3">Apple iPhone 16 Pro Max</h3>
+            </div>
+            <a href="products.html">
+              <button class="jump-btn">
+                Shop Now
+              </button>
+              <!-- btn btn-info text-white fs-2 mt-3 ms-3 sec-button -->
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- section image-->
+      <div class="img-container-hero">
+        <img class="mt-5" src="imgs/IphoneHome.png" alt="iphone and headphone" />
+      </div>
+    </div>
+  </section>
+
+  <!-- End Head -->
+
+  <!-- BODY -->
+  <!-- Start Features -->
+  <div style="background-color: #f8f9fa;">
+    <div
+      class="container features-section d-flex flex-md-row flex-column flex-wrap justify-content-between align-items-center py-3">
+
+      <div class=" d-flex align-items-center justify-content-center gap-3 col-12 my-3 p-2">
+        <h2 class="features-head fs-1">
+          <span class="text-span">Our</span> Features
+        </h2>
+      </div>
+      <div class="feature d-flex align-items-center gap-3 col-12 col-lg-5 my-3 p-4">
+        <i class="fa-solid fa-truck-fast fs-1"></i>
+        <p>
+          <strong class="fw-medium">Fast Shipping</strong><br /><small class="text-secondary">"Get your order delivered
+            within 24 hours locally."</small>
+        </p>
+      </div>
+      <div class="feature d-flex align-items-center gap-3 col-12 col-lg-5 my-3 p-4">
+        <i class="fa-solid fa-arrow-rotate-left fs-1"></i>
+        <p>
+          <strong class="fw-medium">Easy Returns</strong><br /><small class="text-secondary">"Hassle-free returns within
+            14 days, no questions asked."</small>
+        </p>
+      </div>
+      <div class="feature d-flex align-items-center gap-3 col-12 col-lg-5 my-3 p-4">
+        <i class="fa-solid fa-headset fs-1"></i>
+        <p>
+          <strong class="fw-medium">24/7 Support</strong><br /><small class="text-secondary">"Our support team is ready
+            to assist you anytime, anywhere."</small>
+        </p>
+      </div>
+      <div class="feature d-flex align-items-center gap-3 col-12 col-lg-5 my-3 p-4">
+        <i class="fa-solid fa-money-check-dollar fs-1"></i>
+        <p>
+          <strong class="fw-medium">Multiple Payment Options</strong><br /><small class="text-secondary">"Pay securely
+            with credit card, e-wallets, or cash on
+            delivery."</small>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!-- End Features -->
+
+  <!-- Start ads Carouel -->
+  <section id="ads" class="ads-sec">
+    <div class="container">
+      <div id="carouselExampleDark" class="carousel ads-carousel carousel-dark slide py-5 px-4 px-md-0"
+        data-bs-ride="ads-carousel ">
+        <div class="carousel-indicators gap-2">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class=""
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"
+            class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"
+            class=""></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item" data-bs-interval="3000">
+            <div class="d-flex flex-column flex-md-row gap-5 align-items-start py-lg-4 py-2 justify-content-between">
+              <div class="text-ad">
+                <span class="small text-secondary">Laptops</span>
+                <h4>MacBook Pro 16</h4>
+                <p class="mb-3">
+                  Apple Macbook Pro 16" M4 Max Chip 16-Core CPU 40-Core GPU
+                  48/1TB SSD By FedEx
+                </p>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <button class="btn fw-bold mt-4 ms-2 d-block px-3 button-style">
+                  <a href="products.html" style="color: white">
+                    Explore
+                  </a>
+                </button>
+              </div>
+              <div class="img-ad">
+                <img src="./imgs/xbanner_2_product.png.pagespeed.ic.26wMfooIqr.webp" class="d-block w-100"
+                  alt="laptop" />
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item active" data-bs-interval="3000">
+            <div class="d-flex flex-column flex-md-row gap-5 align-items-start py-lg-4 py-2 justify-content-between">
+              <div class="text-ad">
+                <span class="small text-secondary">Apple</span>
+                <h4>Apple IPhone 15</h4>
+                <p class="mb-3">"iPhone 15: Redefining Power and Elegance"</p>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <button class="btn fw-bold mt-4 ms-2 d-block px-3 button-style">
+                  <a href="products.html" style="color: white">
+                    Explore
+                  </a>
+                </button>
+              </div>
+              <div class="img-ad">
+                <img src="./imgs/2b68abe0-2b47-4be2-ab50-181d8e2dd6c0.png" class="d-block w-100" alt="Iphone" />
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <div class="d-flex flex-column flex-md-row gap-5 align-items-start py-lg-4 py-2 justify-content-between">
+              <div class="text-ad">
+                <span class="small text-secondary">iPads</span>
+                <h4>iPad Air 13</h4>
+                <p class="mb-3">"iPad Air 13-inch Wi-Fi + Cellular"</p>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <span><i class="fa-solid fa-star text-warning"></i></span>
+                <button class="btn fw-bold mt-4 ms-2 d-block px-3 button-style">
+                  <a href="products.html" style="color: white">
+                    Explore
+                  </a>
+                </button>
+              </div>
+              <div class="img-ad">
+                <img src="./imgs/5ccf3274-2e2e-4f5d-8b49-b1dcaddab0f9.png" class="d-block w-100" alt="laptop" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End ads Carouel -->
+  <!-- Start Popular Cat -->
+  <section id="popCategories" class="popCategories my-5 px-4 px-md-0">
+    <div
+      class="container d-flex flex-md-row flex-column gap-5 align-items-center align-itsm-sm-between justify-content-sm-between">
+      <div class="text-cat d-flex align-items-center align-items-md-start flex-wrap flex-column">
+        <h4>Popular Categories</h4>
+        <a href="products.html">
+          <button class="btn button-style mt-2 fw-bold" style="width: 180px">
+            Full Categories
+          </button>
+        </a>
+      </div>
+      <div class="catgs d-flex flex-sm-row flex-column align-items-center justify-content-center gap-3 flex-wrap">
+        <div class="cat d-flex flex-column text-center justify-content-center align-items-center">
+          <div style="height: 100px">
+            <img src="imgs/deals-featured/xfeatured_7.png.pagespeed.ic.TSCkRrtjRn.webp" alt="" style="height: 100%" />
+          </div>
+          <div class="d-flex">
+            <p class="text-secondary py-2">Labtops</p>
+          </div>
+        </div>
+        <div class="cat d-flex flex-column text-center justify-content-center align-items-center">
+          <div style="height: 100px">
+            <img src="./imgs/deals-featured/samsung.png" alt="" style="width: 100px" />
+          </div>
+          <p class="text-secondary py-2">Smartphones</p>
+        </div>
+        <div class="cat d-flex flex-column text-center justify-content-center align-items-center">
+          <div style="height: 100px">
+            <img src="./imgs/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="" style="width: 100px" />
+          </div>
+          <p class="text-secondary py-2">Headphones</p>
+        </div>
+        <div class="cat d-flex flex-column text-center justify-content-center align-items-center">
+          <div style="height: 100px">
+            <img src="./imgs/product/tablet03.jpg" alt="" style="height: 100%" />
+          </div>
+          <p class="text-secondary py-2">Tablets</p>
+        </div>
+        <div class="cat d-flex flex-column text-center justify-content-center align-items-center">
+          <div style="height: 100px">
+            <img src="./imgs/product/console01.jpg" alt="" style="width: 100px" />
+          </div>
+          <p class="text-secondary py-2">Gaming</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Popular Cat -->
+  <!-- Start Trends -->
+  <!-- Start Trending Devices Slider -->
+  <section id="trendingDevices" class="carosel-ads trendingDevices pt-3 my-5 px-4 px-md-0 d-none d-md-block">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Trending Devices</h4>
+        <a href="products.html" class="btn btn-danger btn-sm">View All</a>
+      </div>
+
+      <div id="trendingCarousel" class="carousel slide p-0" data-bs-ride="carousel">
+        <div class="carousel-inner p-0">
+          <!-- Slide 1 -->
+          <div class="carousel-item active trend-item" data-bs-interval="2000">
+            <div class="d-flex align-items-center">
+              <div class="d-flex justify-content-between w-100 mt-3">
+                <div class="col-3 d-flex flex-column align-items-center box-item">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/iphone01.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Apple IPhone 13</h5>
+                  <p class="item-price fw-bold">EGP 35,200</p>
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center box-item">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/realme01.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">realme Note 50</h5>
+                  <p class="item-price fw-bold">EGP 6,159</p>
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center box-item">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/honor02.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Honor X9c</h5>
+                  <p class="item-price fw-bold">EGP 14,450</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item trend-item" data-bs-interval="2000">
+            <div class="d-flex align-items-center">
+              <div class="d-flex justify-content-between w-100 p-5">
+                <div class="col-3 d-flex flex-column align-items-center">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/labtop5.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Asus X515 Cel-N4020</h5>
+                  <p class="item-price fw-bold">EGP 10,199</p>
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/labtop3.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Lenovo Laptop N4020</h5>
+                  <p class="item-price fw-bold">EGP 12,999</p>
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/labtop2.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">MSI MODERN 14 C12MO Alder</h5>
+                  <p class="item-price fw-bold">EGP 16,499</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item trend-item" data-bs-interval="2000">
+            <div class="d-flex align-items-center">
+              <div class="d-flex justify-content-between w-100 p-5">
+                <div class="col-3 d-flex flex-column align-items-center">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/tablet03.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Lenovo Tab M10</h5>
+                  <p class="item-price fw-bold">EGP 8,299</p>
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/tablet04.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Huawei TABLET SE</h5>
+                  <p class="item-price fw-bold">EGP 7,190</p>
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center">
+                  <div class="position-relative" style="width: 200px">
+                    <img src="./imgs/product/tablet02.jpg" class="d-block w-100 rounded" alt="Device 2"
+                      style="width: 100%" />
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+                  </div>
+                  <h5 class="mt-3 fs-6">Samsung Tab A9</h5>
+                  <p class="item-price fw-bold">EGP 7,480</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev d-none" type="button" data-bs-target="#trendingCarousel"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next d-none" type="button" data-bs-target="#trendingCarousel"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- End Trending Devices Slider -->
+
+  <!-- End Trends -->
+  <!-- BODY -->
+  <!-- Footer -->
+  <div class="container-box">
+    <footer class="container" id="footer">
+      <!-- Brands Section -->
+      <section id="brands" class="py-5">
+        <div class="brands-container">
+          <ul class="brands-flex">
+            <li>
+              <img src="./imgs/brand/Apple.jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/Samsung Galaxy Font.jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/Lenovo Logo .jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/Samsung Logo .jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/Playstation.jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/new google logo introduced as part of its identity update.jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/xiaomi logo.jpeg" alt="" />
+            </li>
+            <li>
+              <img src="./imgs/brand/Sony.jpeg" alt="" />
+            </li>
+          </ul>
+        </div>
+      </section>
+      </section>
+    </footer>
+    <div class="bg-footer">
+      <div class="container">
+            <!-- Footer Links -->
+            <div class="footer-links-box py-5">
+              <div class="row g-4 d-flex justify-content-center align-items-center">
+                <!-- Logo & Contact Info -->
+                <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+                  <h2 class="item-price">OneTech</h2>
+                  <p class="fw-bold">Got Question? Call Us 24/7</p>
+                  <a href="tel:+201023456789" class="text-main-color">+20 102 345 6789</a>
+                  <a href="mailto:Team4@gmail.com" class="text-main-color">Team4@gmail.com</a>
+                  <p>Gharbia-ITI-Tanta Branch</p>
+                  <div class="d-flex gap-2">
+                    <a href="#"><i class="fa-brands fa-facebook-f icon-link facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter icon-link x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube icon-link youtoub"></i></a>
+                    <a href="#"><i class="fa-brands fa-google icon-link google"></i></a>
+                  </div>
+                </div>
+            
+                <!-- Find it Fast -->
+                <div class="col-6 col-lg-4">
+                  <h6 class="fw-bold">Find it Fast</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li>
+                      <a href="#" class="text-secondary small">Computers & Laptops</a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-secondary small">Smartphones & Tablets</a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-secondary small">Cameras & Photography</a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-secondary small">Home Appliances</a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-secondary small">Gaming Consoles</a>
+                    </li>
+                  </ul>
+                </div>
+            
+                <!-- Customer Care -->
+                <div class="col-6 col-lg-4">
+                  <h6 class="fw-bold">Shopping Tools</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li>
+                      <a href="registration.html" class="text-secondary small">Register</a>
+                    </li>
+                    
+                    <li><a href="products.html" class="text-secondary small">Shop</a></li>
+                    <li>
+                      <a href="Cart-Page.html" class="text-secondary small">Cart</a>
+                    </li>
+                    <li>
+                      <a href="wish.html" class="text-secondary small">Wish List</a>
+                    </li>
+                    <li>
+                      <a href="#footer" class="text-secondary small">Customer Services</a>
+                    </li>
+                    <!-- <li><a href="#" class="text-secondary small">FAQs</a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright container py-4 d-flex justify-content-between align-items-center flex-column flex-md-row">
+              <p class="small text-secondary mb-2 mb-md-0">
+                Copyright ©2025 All rights reserved | Made by
+                <span class="text-main-color">Team-4</span>
+              </p>
+              <div class="d-flex gap-3">
+                <a href="#"><img src="./imgs/footer1.webp" alt="payment1" /></a>
+                <a href="#"><img src="./imgs/footer2.webp" alt="payment2" /></a>
+                <a href="#"><img src="./imgs/footer3.webp" alt="payment3" /></a>
+                <a href="#"><img src="./imgs/footer4.webp" alt="payment4" /></a>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Aside -->
+  <!-- upperArrow -->
+  <aside class="arrowUp">
+    <a href="#" class="d-block w-100 h-100 d-flex align-items-center justify-content-center"><i
+        class="fa-solid fa-chevron-up fa-xl"></i></a>
+  </aside>
+  <!-- <aside class="loading opacity-1">
+      <i class="fa-solid fa-5x fa-spinner fa-spin-pulse text-white"></i>
+    </aside> -->
+
+  <!-- Bootstrap JS -->
+  <script src="JS/bootstrap.bundle.min.js"></script>
+
+  <!-- Duplicating Brands Images -->
+  <script>
+    const brandsScroller = document.querySelector(".brands-flex");
+    const brandsInner = Array.from(brandsScroller.children);
+
+    brandsInner.forEach((brandI) => {
+      const dupl = brandI.cloneNode(true);
+      brandsScroller.appendChild(dupl);
+    });
+    //  Aside arrow Section  //
+    const arrow = document.querySelector(".arrowUp");
+    const hero = document.getElementById("home");
+
+    window.addEventListener("scroll", () => {
+      if (hero.getBoundingClientRect().bottom < 0) {
+        arrow.classList.add("showArrow");
+      } else {
+        arrow.classList.remove("showArrow");
+      }
+    });
+  </script>
+  <script src="JS/product.js"></script>
+  <script src="JS/wish.js"></script>
+  <!-- <script src="JS/registration.js"></script> -->
+  <script src="JS/checkUserRole.js"></script>
+  <script src="JS/home-search.js"></script>
+</body>
+
+</html>

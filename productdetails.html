@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="imgs/logo.png" type="image/png">
+  <title>OneTech | Product Details</title>
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/home-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+  --main-color: #2D2D27;
+  --sec-color: #F9F9F9;
+  --text-color: #FF9F00;
+  --bg-color: #2D2D27;
+  --primary-color: rgb(145, 94, 246);
+  --secondary-color: rgb(255, 255, 255);
+  --orange-color: #ff7e5f;
+  --danger-color: #ff0000;
+  --success-color: rgb(144, 238, 144);
+  --border-hover: rgb(223, 223, 233);
+  --placeholder-color: rgb(186, 186, 186);
+  --price-hover: rgb(255, 101, 40);
+
+}
+
+
+    .line-clamp-1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    #rating {
+      font-size: 1.2rem;
+    }
+
+
+    .dropdown-item {
+      padding: 10px 16px;
+      font-size: 15px;
+      color: #333;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .dropdown-item span {
+      display: block;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f2f2f2;
+      color: #000;
+    }
+
+    #signOut {
+      color: #ff7e5f;
+    }
+
+
+    .dropdown-item:hover span {
+      color: #ff7e5f;
+      transform: scale(1.1);
+    }
+
+
+    /* button {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #ff7e5f 100%);
+            transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(187, 78, 44, 0.3);
+            overflow: hidden;
+        }
+
+        button::aftser {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -200%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+
+        button:hover::after {
+            left: 200%;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 126, 95, 0.5);
+            background: linear-gradient(135deg, #ff7e5f 0%, var(--primary-color) 100%);
+        } */
+
+    #add-to-cart {
+      transition: .7s;
+    }
+
+    #add-to-cart:hover {
+      transform: scale(.9);
+    }
+
+    .floating-msg {
+      position: absolute;
+      background: #333;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+    }
+
+    .review-box {
+      width: 500px;
+      transition: opacity 0.3s ease-in-out;
+      min-height: 150px;
+      border-radius: 15px;
+    }
+
+    .review-box h5 {
+      font-size: 1.3rem;
+    }
+
+    .review-box p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .i-style {
+      z-index: 10;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #bbb;
+    }
+
+    #prev-review,
+    #next-review{
+      color: var(--text-color);
+      cursor: pointer;
+    }
+    #prev-review:hover,
+    #next-review:hover {
+      color: var(--bg-color);
+    }
+    .review-box {
+      background-color: var(--bg-color);
+  animation: fadeInZoom 0.6s ease-out forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+@keyframes fadeInZoom {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+    .review-form-container{
+      background-image: url(/imgs/background-with-facebook-icons.png);
+      background-size: cover;
+      color:var(--text-color);
+      width: 60%;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .review-form-container textarea {
+      margin: 10px auto;
+      border: none;
+    }
+    .review-form-container textarea:focus {
+      box-shadow: 5px 0px 10px var(--text-color);
+      border: none;
+    }
+
+
+    .carousel-item h5 {
+      font-weight: bold;
+      font-size: 18px !important;
+      /* color: red; */
+    }
+
+
+    .border-img:hover {
+      box-shadow: 0px 0px 5px var(--price-hover);
+      border-radius: 0.25rem;
+      ;
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+
+    .border-img {
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .Discount-Banner {
+      background-image: url(./imgs/Register/black\ and\ white\ love\ GIF.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .Discount-Banner>h6 {
+      color: #ff7e5f;
+    }
+
+    .w-static {
+      width: 150px;
+      /* height: 80px; */
+    }
+
+
+    .related-img {
+      transform: scale(.9);
+      transition: .7s;
+    }
+
+    .related-img:hover {
+      transform: scale(1);
+    }
+    #relatedDiv div h5{
+      height: 21px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+    #relatedDiv div p{
+      text-align: center;
+    }
+    .icon-link {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  border-radius: 50%;
+  transition: all 0.25s;
+  color: white;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- Start Nav Bar -->
+  <header class="header d-flex justify-content-center">
+    <div class="container-fluid mx-3">
+      <nav class="navbar navbar-expand-lg">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="imgs/logo.png" alt="OneTech Logo" style="height: 60px;"><span
+            class="fw-bold fs-2 text-white">OneTech</span>
+        </a>
+
+
+        <!-- Burger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          Menu &nbsp; <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav w-100 d-flex flex-column flex-md-row align-items-center gap-3">
+            <!-- Navigation Links -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+
+            <!-- Search -->
+            <li class="nav-item w-75">
+              <div class="search-container position-relative">
+                <form
+                  class="search-form d-flex align-items-center position-relative"
+                >
+                  <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input form-control"
+                    placeholder="Search products..."
+                  />
+                  <button type="button" class="search-button btn">
+                    <i class="fas fa-search search-icon"></i>
+                  </button>
+                </form>
+                <div id="searchResults" class="d-none w-100"></div>
+              </div>
+            </li>
+            <!-- Login/Register Button -->
+            <li  class="nav-item">
+              <div id="LogReg">
+                <button class="auth-btn"><a href="login.html">Login</a> | <a href="registration.html">Register</a>
+                </button>
+              </div>
+            </li>
+
+              <!-- Wishlist -->
+            <li id="wishlist" class="nav-item">
+              <a href="./wish.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <div class="position-relative text-white">
+                  <img src="imgs/heart.png" alt="wishlist" width="30" />
+                  <div class="num-wish">
+                    <span id="wishlistCount">0</span>
+                  </div>
+                </div>
+                <span class="nav-link p-0">Wishlist</span>
+              </a>
+            </li>
+            <!-- Cart -->
+            <li class="nav-item">
+              <a href="./Cart-Page.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <div class="position-relative">
+                  <img src="imgs/shopping-cart.png" alt="cart" width="30" />
+                  <div class="num-cart">0</div>
+                </div>
+                <span class="nav-link p-0">Cart</span>
+              </a>
+            </li>
+
+            <!-- Displayed Account Profile when Log in -->
+            <li class="nav-item">
+              <div class="dropdown" id="accProfile">
+                <button id="accName" class="auth-btn btn btn-secondary dropdown-toggle" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu">
+                  <li id="adminPanel"><a class="dropdown-item" href="adminPanel.html"><span><i
+                          class="fa-solid fa-user me-1"></i> Admin Panel</span></a></li>
+                  <li id="sellerPanel"><a class="dropdown-item" href="sellerPanel.html"><span><i
+                          class="fa-solid fa-user me-1"></i> Seller Panel</span></a></li>
+                  <li><a id="settings" class="dropdown-item" href="settings.html"><span><i class="fa-solid fa-gear  me-1"></i>
+                        Settings</span></a></li>
+                  <li><a id="orders" class="dropdown-item" href="orders.html"><span><i class="fa-solid fa-basket-shopping me-1"></i> Orders</span></a></li>
+                  <li><a class="dropdown-item" href=""><span id="signOut"><i
+                          class="fa-solid fa-right-from-bracket fa-flip-horizontal  me-1"></i> Sign out</span></a></li>
+                </ul>
+  
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- End Nav Bar -->
+
+
+
+  <!-- Start Product Deatils -->
+  <div class="container py-5">
+    <div class="productd row my-2 items-center">
+    </div>
+    <div class="product-details"></div>
+    <!-- new add by hamada -->
+    <div class="container my-5 d-flex justify-content-center align-items-center position-relative "
+      style="min-height: 250px;">
+      <i id="prev-review" class="fas fa-chevron-left fa-lg"></i>
+
+      <div class="review-box text-center py-3 rounded mx-5">
+        <p id="review-stars" class="mb-3">⭐⭐⭐⭐⭐</p>
+        <p id="review-text" class="fst-italic text-warning my-4"></p>
+        <h5 id="review-name" class="fw-bold text-white"> </h5>
+      </div>
+      <i id="next-review" class="fas fa-chevron-right fa-lg"></i>
+    </div>
+
+    <div class="review-form-container review-box">
+      <h5 class="mb-4 fw-bold fs-3">Share your opinion</h5>
+      <textarea id="input-review" class="form-control mb-2 w-100" placeholder="Write your opinion here"></textarea>
+      <button id="submit-review" class="button-style mt-3 px-4" role="button">Add your opinion</button>
+    </div>
+
+    <div id="related-products" class="mt-4">
+    </div>
+  </div>
+  <!-- new add by hamada -->
+  <div id="related-products" class="mt-4">
+  </div>
+  </div>
+  <!-- new Toast By Tarek  -->
+  <div id="parentToast" class="position-fixed top-0 end-0 p-3" style="z-index: 1; margin-top: 100px; width: 280px;">
+    <div id="liveToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body fw-bold">
+          تم إضافة المنتج إلى المفضلة
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+<!-- new Toast By Tarek  -->
+
+  <!-- Start Trends -->
+  <!-- Start Trending Devices Slider -->
+  <section id="relatedDiv" class=" carosel-ads trendingDevices py-3 my-5 px-4 px-md-0 d-none d-md-block">
+    <h5 class="text-center fs-3 fw-bold my-2">Related Products</h5>
+    <div id="relatedSlide" class="d-flex justify-content-center flex-wrap w-100">
+      <!-- Generated by JS in pdetails.js -->
+    </div>
+  </section>
+  <!-- End Trending Devices Slider -->
+
+  <!-- End Trends -->
+  <!-- BODY -->
+  <!-- Footer -->
+  <div class="bg-footer">
+    <div class="container">
+      <!-- Footer Links -->
+      <div class="footer-links-box py-5">
+        <div class="row g-4 d-flex justify-content-center align-items-center">
+          <!-- Logo & Contact Info -->
+          <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+            <h2 class="item-price">OneTech</h2>
+            <p class="fw-bold">Got Question? Call Us 24/7</p>
+            <a href="tel:+201023456789" class="text-main-color">+20 102 345 6789</a>
+            <a href="mailto:Team4@gmail.com" class="text-main-color">Team4@gmail.com</a>
+            <p>Gharbia-ITI-Tanta Branch</p>
+            <div class="d-flex gap-2">
+              <a href="#"><i class="fa-brands fa-facebook-f icon-link facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter icon-link x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube icon-link youtoub"></i></a>
+              <a href="#"><i class="fa-brands fa-google icon-link google"></i></a>
+            </div>
+          </div>
+  
+          <!-- Find it Fast -->
+          <div class="col-6 col-lg-4">
+            <h6 class="fw-bold">Find it Fast</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2">
+              <li>
+                <a href="#" class="text-secondary small">Computers & Laptops</a>
+              </li>
+              <li>
+                <a href="#" class="text-secondary small">Smartphones & Tablets</a>
+              </li>
+              <li>
+                <a href="#" class="text-secondary small">Cameras & Photography</a>
+              </li>
+              <li>
+                <a href="#" class="text-secondary small">Home Appliances</a>
+              </li>
+              <li>
+                <a href="#" class="text-secondary small">Gaming Consoles</a>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Customer Care -->
+          <div class="col-6 col-lg-4">
+            <h6 class="fw-bold">Shopping Tools</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2">
+              <li>
+                <a href="registration.html" class="text-secondary small">Register</a>
+              </li>
+              <li><a href="products.html" class="text-secondary small">Shop</a></li>
+              <li>
+                <a href="Cart-Page.html" class="text-secondary small">Cart</a>
+              </li>
+              <li>
+                <a href="wish.html" class="text-secondary small">Wish List</a>
+              </li>
+              <li>
+                <a href="#footer" class="text-secondary small">Customer Services</a>
+              </li>
+              <!-- <li><a href="#" class="text-secondary small">FAQs</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Copyright -->
+      <div class="copyright container py-4 d-flex justify-content-between align-items-center flex-column flex-md-row">
+        <p class="small text-secondary mb-2 mb-md-0">
+          Copyright ©2025 All rights reserved | Made by
+          <span class="text-main-color">Team-4</span>
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#"><img src="./imgs/footer1.webp" alt="payment1" /></a>
+          <a href="#"><img src="./imgs/footer2.webp" alt="payment2" /></a>
+          <a href="#"><img src="./imgs/footer3.webp" alt="payment3" /></a>
+          <a href="#"><img src="./imgs/footer4.webp" alt="payment4" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/bootstrap.bundle.min.js"></script>
+  <script src="JS/pdetails.js"></script>
+  <script src="JS/product.js"></script>
+  <script src="JS/wish.js"></script>
+  <script src="JS/checkUserRole.js"></script>
+  <script src="JS/home-search.js"></script>
+  <script src="JS/adminSellerPanel.js"></script>
+</body>
+
+</html>

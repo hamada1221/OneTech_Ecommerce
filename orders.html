@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imgs/logo.png" type="image/png" />
+    <title>OneTech | Orders</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="CSS/home-style.css" /> -->
+    <!-- <script src="JS/orders.js"></script> -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="CSS/all.min.css" /> -->
+    <link rel="stylesheet" href="CSS/customer-order.css" />
+    <link rel="stylesheet" href="CSS/home-style.css" />
+  </head>
+  <body>
+    <!-- Start Nav Bar -->
+    <header class="header d-flex justify-content-center">
+      <div class="container-fluid mx-3">
+        <nav class="navbar navbar-expand-lg">
+          <!-- Logo -->
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="imgs/logo.png"
+              alt="OneTech Logo"
+              style="height: 60px"
+            /><span class="fw-bold fs-2 text-white">OneTech</span>
+          </a>
+
+          <!-- Burger Button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu &nbsp; <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul
+              class="navbar-nav w-100 d-flex flex-column flex-md-row align-items-center gap-3"
+            >
+              <!-- Navigation Links -->
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+
+              <!-- Search -->
+              <li class="nav-item w-75">
+                <div class="search-container position-relative">
+                  <form
+                    class="search-form d-flex align-items-center position-relative"
+                  >
+                    <input
+                      type="text"
+                      id="searchInput"
+                      class="search-input form-control"
+                      placeholder="Search products..."
+                    />
+                    <button type="button" class="search-button btn">
+                      <i class="fas fa-search search-icon"></i>
+                    </button>
+                  </form>
+                  <div id="searchResults" class="d-none w-100"></div>
+                </div>
+              </li>
+              <!-- Login/Register Button -->
+              <li class="nav-item">
+                <div id="LogReg">
+                  <button class="auth-btn">
+                    <a href="login.html">Login</a> |
+                    <a href="registration.html">Register</a>
+                  </button>
+                </div>
+              </li>
+
+              <!-- Wishlist -->
+              <li id="wishlist" class="nav-item">
+                <a
+                  href="./wish.html"
+                  class="d-flex align-items-center gap-2 text-decoration-none"
+                >
+                  <div class="position-relative text-white">
+                    <img src="imgs/heart.png" alt="wishlist" width="30" />
+                    <div class="num-wish">
+                      <span id="wishlistCount">0</span>
+                    </div>
+                  </div>
+                  <span class="nav-link p-0">Wishlist</span>
+                </a>
+              </li>
+              <!-- Cart -->
+              <li class="nav-item">
+                <a
+                  href="./Cart-Page.html"
+                  class="d-flex align-items-center gap-2 text-decoration-none"
+                >
+                  <div class="position-relative">
+                    <img src="imgs/shopping-cart.png" alt="cart" width="30" />
+                    <div class="num-cart">0</div>
+                  </div>
+                  <span class="nav-link p-0">Cart</span>
+                </a>
+              </li>
+
+              <!-- Displayed Account Profile when Log in -->
+              <li class="nav-item">
+                <div class="dropdown" id="accProfile">
+                  <button
+                    id="accName"
+                    class="auth-btn btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></button>
+                  <ul class="dropdown-menu">
+                    <li id="adminPanel">
+                      <a class="dropdown-item" href="adminPanel.html"
+                        ><span
+                          ><i class="fa-solid fa-user me-1"></i> Admin
+                          Panel</span
+                        ></a
+                      >
+                    </li>
+                    <li id="sellerPanel">
+                      <a class="dropdown-item" href="sellerPanel.html"
+                        ><span
+                          ><i class="fa-solid fa-user me-1"></i> Seller
+                          Panel</span
+                        ></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        id="settings"
+                        class="dropdown-item"
+                        href="settings.html"
+                        ><span
+                          ><i class="fa-solid fa-gear me-1"></i> Settings</span
+                        ></a
+                      >
+                    </li>
+                    <li>
+                      <a id="orders" class="dropdown-item" href="orders.html"
+                        ><span
+                          ><i class="fa-solid fa-basket-shopping me-1"></i>
+                          Orders</span
+                        ></a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href=""
+                        ><span id="signOut"
+                          ><i
+                            class="fa-solid fa-right-from-bracket fa-flip-horizontal me-1"
+                          ></i>
+                          Sign out</span
+                        ></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- End Nav Bar -->
+
+    <!-- new Toast By Tarek  -->
+    <div
+      id="parentToast"
+      class="position-fixed top-0 end-0 p-3"
+      style="z-index: -1; margin-top: 100px; width: 280px"
+    >
+      <div
+        id="liveToast"
+        class="toast align-items-center text-white bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body fw-bold">تم إضافة المنتج إلى المفضلة</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <!-- new Toast By Tarek  -->
+
+    <main class="container">
+      <!-- <h1 class="page-title">My Orders</h1> -->
+      <div class="orders-container">
+        <div class="orders-header">
+          <h2 class="orders-title">Order History</h2>
+          <div class="search-filter">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="ordersSearchInput"
+                placeholder="Search orders..."
+              />
+            </div>
+          </div>
+        </div>
+
+        <div id="ordersList"></div>
+
+        <div id="emptyOrders" class="empty-orders hidden">
+          <i class="fas fa-box-open"></i>
+          <h3>No Orders Found</h3>
+          <p>
+            You haven't placed any orders yet or no orders match your search
+            criteria.
+          </p>
+          <!-- <button class="btn btn-primary">Start Shopping</button> -->
+          <button
+            class="button-style text-center"
+            onclick="window.location.href = 'products.html'"
+          >
+            Start Shopping
+          </button>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <div class="bg-footer">
+      <div class="container">
+        <!-- Footer Links -->
+        <div class="footer-links-box py-5">
+          <div class="row g-4 d-flex justify-content-center align-items-center">
+            <!-- Logo & Contact Info -->
+            <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+              <h2 class="fw-bold" style="color: black !important">OneTech</h2>
+              <p class="fw-bold">Got Question? Call Us 24/7</p>
+              <a href="tel:+201023456789" class="text-main-color"
+                >+20 102 345 6789</a
+              >
+              <a href="mailto:Team4@gmail.com" class="text-main-color"
+                >Team4@gmail.com</a
+              >
+              <p>Gharbia-ITI-Tanta Branch</p>
+              <div class="d-flex gap-2">
+                <a href="#"
+                  ><i class="fa-brands fa-facebook-f icon-link facebook"></i
+                ></a>
+                <a href="#"
+                  ><i class="fa-brands fa-x-twitter icon-link x-twitter"></i
+                ></a>
+                <a href="#"
+                  ><i class="fa-brands fa-youtube icon-link youtoub"></i
+                ></a>
+                <a href="#"
+                  ><i class="fa-brands fa-google icon-link google"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Find it Fast -->
+            <div class="col-6 col-lg-4">
+              <h6 class="fw-bold">Find it Fast</h6>
+              <ul class="list-unstyled d-flex flex-column gap-2">
+                <li>
+                  <a href="#" class="text-secondary small"
+                    >Computers & Laptops</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-secondary small"
+                    >Smartphones & Tablets</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-secondary small"
+                    >Cameras & Photography</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-secondary small">Home Appliances</a>
+                </li>
+                <li>
+                  <a href="#" class="text-secondary small">Gaming Consoles</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Customer Care -->
+            <div class="col-6 col-lg-4">
+              <h6 class="fw-bold">Shopping Tools</h6>
+              <ul class="list-unstyled d-flex flex-column gap-2">
+                <li>
+                  <a href="registration.html" class="text-secondary small">Register</a>
+                </li>
+                <li><a href="products.html" class="text-secondary small">Shop</a></li>
+                <li>
+                  <a href="Cart-Page.html" class="text-secondary small">Cart</a>
+                </li>
+                <li>
+                  <a href="wish.html" class="text-secondary small">Wish List</a>
+                </li>
+                <li>
+                  <a href="#footer" class="text-secondary small">Customer Services</a>
+                </li>
+                <!-- <li><a href="#" class="text-secondary small">FAQs</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div
+          class="copyright container py-4 d-flex justify-content-between align-items-center flex-column flex-md-row"
+        >
+          <p class="small text-secondary mb-2 mb-md-0">
+            Copyright ©2025 All rights reserved | Made by
+            <span class="text-main-color">Team-4</span>
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#"><img src="./imgs/footer1.webp" alt="payment1" /></a>
+            <a href="#"><img src="./imgs/footer2.webp" alt="payment2" /></a>
+            <a href="#"><img src="./imgs/footer3.webp" alt="payment3" /></a>
+            <a href="#"><img src="./imgs/footer4.webp" alt="payment4" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = () => {
+        const numWish = document.getElementById("num-wish");
+        numWish.style.visibility = "hidden";
+        const numCart = document.getElementById("num-cart");
+        numCart.style.visibility = "hidden";
+      };
+    </script>
+
+    <script src="JS/customerOrders.js"></script>
+    <script src="JS/checkUserRole.js"></script>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/home-search.js"></script>
+    <script src="JS/wish.js"></script>
+  </body>
+</html>

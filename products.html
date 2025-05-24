@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imgs/logo.png" type="image/png">
+    <title>OneTech | Shop</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="CSS/all.min.css" /> -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="CSS/home-style.css" />
+    <link rel="stylesheet" href="CSS/products-style.css" />
+    <style>
+      :root {
+  --main-color: #2D2D27;
+  --sec-color: #F9F9F9;
+  --text-color: #FF9F00;
+  --bg-color: #2D2D27;
+  --primary-color: rgb(145, 94, 246);
+  --secondary-color: rgb(255, 255, 255);
+  --orange-color: #ff7e5f;
+  --danger-color: #ff0000;
+  --success-color: rgb(144, 238, 144);
+  --border-hover: rgb(223, 223, 233);
+  --placeholder-color: rgb(186, 186, 186);
+  --price-hover: rgb(255, 101, 40);
+
+}
+      .fa-xmark {
+        position: relative;
+        top: 18px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        /* border: 2px solid red; */
+        font-size: 20px;
+        /* opacity: 0; */
+        color: rgb(5, 5, 5);
+        cursor: pointer;
+      }
+      .carousel-item h5 {
+        font-weight: bold;
+        font-size: 20px !important;
+        /* color: red; */
+      }
+      #accProfile {
+        margin-right: 15px;
+      }
+
+
+
+      .bounce-once {
+        animation: bounce 1s ease;
+      }
+
+      @keyframes bounce {
+              0% {
+          transform: scale(1) rotate(0deg);
+        }
+        25% {
+          transform: scale(1.25) rotate(8deg);
+        }
+        50% {
+          transform: scale(0.97) rotate(-6deg);
+        }
+        75% {
+          transform: scale(1.1) rotate(3deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+        }
+
+
+        @media (max-width:992px) {
+          .carousel-inner h5{
+            height: 21px;
+            overflow: hidden;
+        }
+
+        }
+        .all-products .card {
+          overflow: hidden;
+        }
+
+        .item-title {
+  height: 21px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+} 
+
+.favorite-icon {
+  position: relative;
+  z-index: 3;
+}
+.item-image {
+  transition: .8s;
+  transform: scale(.9);
+
+}
+.item-image:hover {
+  transform: scale(1);
+}
+
+  #filter-side {
+    position: sticky;
+    top: 85px;
+    width: 100%;
+    min-width: 200px;
+    align-self: flex-start;
+    height: fit-content;
+    padding: 15px;
+    background-color: var(--sec-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: bottom 0.3s ease, left 0.3s ease, transform 0.3s ease;
+}
+
+.clrear-btn {
+  position: absolute;
+  right: 5px;
+}
+
+
+  #filter-side.fixed {
+    position: sticky; 
+    top: 10px;
+    bottom: auto;
+    left: 10px;
+    transform: none; 
+  }
+
+  .filters::-webkit-scrollbar {
+    width: 0;
+  }
+  .filters {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+
+
+
+  .filters h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .filters input {
+    margin-bottom: 10px;
+  }
+
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    transform: translateY(3px);
+    margin-right: 2px;
+  }
+  input[type="checkbox"]:checked {
+    background-color: var(--text-color); /* لون أصفر */
+    border-color: var(--text-color);
+  }
+  input[type="checkbox"]:checked::after {
+    content: "✔";
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    left: 2px;
+    top: -1px;
+  }
+
+
+  .filters  button {
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .clrear-btn {
+    transition: .5s;
+    transform: scale(.9);
+    background-color: var(--bg-color);
+  }
+  .clrear-btn:hover {
+    transform: scale(1);
+    background-color: var(--text-color);
+  }
+  .all-products {
+    align-items: flex-start;
+    min-height: 80vh;
+  }
+
+  .search-div {
+    position: relative;
+  border-radius: 36px;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 460px;
+  min-width: 280px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width:567px) {
+  .search-div{
+    display: none !important;
+  }
+.products{
+  gap: 10px !important;
+}
+}
+
+.search-input:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+.item-price {
+  color: var(--price-hover);
+}
+    </style>
+  </head>
+
+  <body>
+  <!-- Start Nav Bar -->
+  <header class="header d-flex justify-content-center">
+    <div class="container-fluid mx-3">
+      <nav class="navbar navbar-expand-lg">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="imgs/logo.png" alt="OneTech Logo" style="height: 60px;"><span
+            class="fw-bold fs-2 text-white">OneTech</span>
+        </a>
+
+
+        <!-- Burger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          Menu &nbsp; <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav w-100 d-flex flex-column flex-md-row align-items-center gap-3">
+            <!-- Navigation Links -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+
+            <!-- Search -->
+            <li class="nav-item w-75">
+              <div class="search-container position-relative">
+                <form
+                  class="search-form d-flex align-items-center position-relative"
+                >
+                  <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input form-control"
+                    placeholder="Search products..."
+                  />
+                  <button type="button" class="search-button btn">
+                    <i class="fas fa-search search-icon"></i>
+                  </button>
+                </form>
+                <div id="searchResults" class="d-none w-100"></div>
+              </div>
+            </li>
+            <!-- Login/Register Button -->
+            <li  class="nav-item">
+              <div id="LogReg">
+                <button class="auth-btn"><a href="login.html">Login</a> | <a href="registration.html">Register</a>
+                </button>
+              </div>
+            </li>
+
+              <!-- Wishlist -->
+            <li id="wishlist" class="nav-item">
+              <a href="./wish.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <div class="position-relative text-white">
+                  <img src="imgs/heart.png" alt="wishlist" width="30" />
+                  <div class="num-wish">
+                    <span id="wishlistCount">0</span>
+                  </div>
+                </div>
+                <span class="nav-link p-0">Wishlist</span>
+              </a>
+            </li>
+            <!-- Cart -->
+            <li class="nav-item">
+              <a href="./Cart-Page.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                <div class="position-relative">
+                  <img src="imgs/shopping-cart.png" alt="cart" width="30" />
+                  <div class="num-cart">0</div>
+                </div>
+                <span class="nav-link p-0">Cart</span>
+              </a>
+            </li>
+
+            <!-- Displayed Account Profile when Log in -->
+            <li class="nav-item">
+              <div class="dropdown" id="accProfile">
+                <button id="accName" class="auth-btn btn btn-secondary dropdown-toggle" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu">
+                  <li id="adminPanel"><a class="dropdown-item" href="adminPanel.html"><span><i
+                          class="fa-solid fa-user me-1"></i> Admin Panel</span></a></li>
+                  <li id="sellerPanel"><a class="dropdown-item" href="sellerPanel.html"><span><i
+                          class="fa-solid fa-user me-1"></i> Seller Panel</span></a></li>
+                  <li><a id="settings" class="dropdown-item" href="settings.html"><span><i class="fa-solid fa-gear  me-1"></i>
+                        Settings</span></a></li>
+                  <li><a id="orders" class="dropdown-item" href="orders.html"><span><i class="fa-solid fa-basket-shopping me-1"></i> Orders</span></a></li>
+                  <li><a class="dropdown-item" href=""><span id="signOut"><i
+                          class="fa-solid fa-right-from-bracket fa-flip-horizontal  me-1"></i> Sign out</span></a></li>
+                </ul>
+  
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- End Nav Bar -->
+
+    <!-- Start Products Page -->
+    <!-- Start Carosel for Top Seller -->
+    <!-- Start Trends -->
+    <!-- Start Trending Devices Slider -->
+    <section
+      id="trendingDevices"
+      class="carosel-ads trendingDevices pt-3 my-5 px-4 px-md-0 d-none d-md-block"
+    >
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="mb-0">Top Seller</h4>
+          <!-- <a href="products.html" class="btn btn-danger btn-sm">View All</a> -->
+        </div>
+
+        <div
+          id="trendingCarousel"
+          class="carousel slide p-0"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner pb-4 pb-xl-0 p-0">
+            <!-- Slide 1 -->
+            <div
+              class="carousel-item active trend-item"
+              data-bs-interval="2000"
+            >
+              <div class="d-flex align-items-center">
+                <div class="d-flex justify-content-between w-100 p-5">
+                  <div class="col-3 d-flex flex-column align-items-center">
+                    <div class="position-relative" style="width: 200px">
+                      <img
+                        src="./imgs/product/honor03.jpg"
+                        class="d-block w-100 rounded"
+                        alt="Device 2"
+                        style="width: 100%"
+                      />
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 m-2"
+                        ></span
+                      >
+                    </div>
+                    <h5 class="mt-3 fs-6">Honor 200</h5>
+                    <p class="item-price fw-bold">EGP 26,378</p>
+                  </div>
+                  <div class="col-3 d-flex flex-column align-items-center">
+                    <div class="position-relative" style="width: 200px">
+                      <img
+                        src="./imgs/product/console01.jpg"
+                        class="d-block w-100 rounded"
+                        alt="Device 2"
+                        style="width: 100%"
+                      />
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 m-2"
+                        ></span
+                      >
+                    </div>
+                    <h5 class="mt-3 fs-6">MS Xbox Series S</h5>
+                    <p class="item-price fw-bold">EGP 21,049</p>
+                  </div>
+                  <div class="col-3 d-flex flex-column align-items-center">
+                    <div class="position-relative" style="width: 200px">
+                      <img
+                        src="./imgs/product/tablet01.jpg"
+                        class="d-block w-100 rounded"
+                        alt="Device 2"
+                        style="width: 100%"
+                      />
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 m-2"
+                        ></span
+                      >
+                    </div>
+                    <h5 class="mt-3 fs-6">Galaxy Tab A9</h5>
+                    <p class="item-price fw-bold">EGP 10,026</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item trend-item" data-bs-interval="2000">
+              <div class="d-flex align-items-center">
+                <div class="d-flex justify-content-between w-100 p-5">
+                  <div class="col-3 d-flex flex-column align-items-center">
+                    <div class="position-relative" style="width: 200px">
+                      <img
+                        src="./imgs/product/realme01.jpg"
+                        class="d-block w-100 rounded"
+                        alt="Device 2"
+                        style="width: 100%"
+                      />
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 m-2"
+                        ></span
+                      >
+                    </div>
+                    <h5 class="mt-3 fs-6">realme Note 50</h5>
+                    <p class="item-price fw-bold">EGP 6,159</p>
+                  </div>
+                  <div class="col-3 d-flex flex-column align-items-center">
+                    <div class="position-relative" style="width: 200px">
+                      <img
+                        src="./imgs/product/labtop4.jpg"
+                        class="d-block w-100 rounded"
+                        alt="Device 2"
+                        style="width: 100%"
+                      />
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 m-2"
+                        ></span
+                      >
+                    </div>
+                    <h5 class="mt-3 fs-6">Asus X515MA-BR001</h5>
+                    <p class="item-price fw-bold">EGP 8,999</p>
+                  </div>
+                  <div class="col-3 d-flex flex-column align-items-center">
+                    <div class="position-relative" style="width: 200px">
+                      <img
+                        src="./imgs/product/tablet04.jpg"
+                        class="d-block w-100 rounded"
+                        alt="Device 2"
+                        style="width: 100%"
+                      />
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 m-2"
+                        ></span
+                      >
+                    </div>
+                    <h5 class="mt-3 fs-6">Huawei TABLET SE</h5>
+                    <p class="item-price fw-bold">EGP 7.190</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev d-none"
+            type="button"
+            data-bs-target="#trendingCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next d-none"
+            type="button"
+            data-bs-target="#trendingCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- End Trending Devices Slider -->
+
+    <!-- End Trends -->
+
+    <!-- End Carosel for Top Seller -->
+
+    <!-- Start all Cats -->
+
+
+    <div class="products container py-5 border-2 border-warning d-flex justify-content-between gap-5">
+          <!-- new filter sideBar by Tarek -->
+          <div id="filter-side" class="filter-side" style="max-width: 250px;">
+        <button  class="clrear-btn"
+        onclick="clearFilters()" 
+        style="width: 60px; padding: 1px; color: white; border: none; border-radius: 6px; cursor: pointer;"
+      >
+        Clear
+      </button>
+      <div class="filters overflow-auto" style="max-height: 380px;">
+        <h5 class="mt-0">Category</h5>
+        <div id="categoryFilters">
+          <label>
+            <input type="checkbox" class="category-filter" value="Smartphones"> Smartphones
+          </label><br>
+          <label>
+            <input type="checkbox" class="category-filter" value="Laptops"> Laptops
+          </label><br>
+          <label>
+            <input type="checkbox" class="category-filter" value="Tablets"> Tablets
+          </label><br>
+          <label>
+            <input type="checkbox" class="category-filter" value="Consoles"> Consoles
+          </label><br>
+          <label>
+            <input type="checkbox" class="category-filter" value="Headphones"> Headphones
+          </label><br>
+        </div>
+        <h5>Brand</h5>
+        <div id="brandFilters">
+          <label>
+            <input type="checkbox" class="brand-filter" value="Apple"> Apple
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Samsung"> Samsung
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Infinix"> Infinix
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Realme"> Realme
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Xiaomi"> Xiaomi
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Honor"> Honor 
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="OPPO"> OPPO
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Vivo"> Vivo
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Nokia"> Nokia
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Dell"> Dell
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="HP"> HP
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Asus"> Asus
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="MSI"> MSI 
+          </label><br>
+          <label>
+            <input type="checkbox" class="brand-filter" value="Prodo"> Prodo 
+          </label><br>
+        </div>
+      
+      </div>  
+      <h5 class="mt-3">Price</h5>
+      <input 
+      type="number" 
+      id="minPrice" 
+      placeholder="Min Price"
+      style="width: 100%; padding: 8px 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none;"
+    >
+    <input 
+      type="number" 
+      id="maxPrice" 
+      placeholder="Max Price"
+      style="width: 100%; padding: 8px 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none;"
+    >
+    <button 
+      onclick="applyFilters()" 
+       class="button-style w-100"
+    >
+      GO
+    </button>
+      </div>
+
+    
+    <!-- new filter sideBar by Tarek -->
+      <div id="displayedProds" class=" d-flex m-auto flex-column  justify-content-start">
+        
+        <div class="search-div col-11 col-md-8 col-xl-6 text-center m-auto mt-2 mb-5 d-flex position-relative">
+
+          <!-- input البحث -->
+          <input
+            id="search-input"
+            class="p-3 search-input mx-3 w-100"
+            type="text"
+            name="search"
+            placeholder="Search products"
+            style="padding-right: 40px;"
+          />
+        
+          <!-- أيقونة X للمسح -->
+          <i
+            id="xmark"
+            class="fa-solid fa-xmark"
+            style="
+              position: absolute;
+              right: 110px;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 20px;
+              color: #FF9F00;
+              cursor: pointer;
+              display: none;
+            "
+            title="Clear search"
+          ></i>
+        
+          <!-- زر البحث -->
+          <input
+            id="search-button"
+            class="p-3 search-btn"
+            type="button"
+            value="Search"
+          />
+        
+        </div>
+        
+        <div id="noItemFound" class="fw-bold" style="display: none; text-align: center; position: relative;">No products found</div>
+        <div id="all-products" class="all-products d-flex flex-wrap gap-3 justify-content-center">
+          <!-- all products will generated by JS fun -->
+        </div>
+        <!-- Btns for slides -->
+        <!-- <div id="pagination" class="d-flex justify-content-center my-3"></div> --> 
+
+      </div>
+    </div>
+    <!-- End all Cats -->
+    <!-- End Products Page -->
+
+    <!-- Footer -->
+    <div class="container-box">
+      <footer class="container" id="footer">
+        <!-- Brands Section -->
+        <section id="brands" class="py-5">
+          <div class="brands-container">
+            <ul class="brands-flex">
+              <li>
+                <img src="./imgs/brand/Apple.jpeg" alt="" />
+              </li>
+              <li>
+                <img src="./imgs/brand/Samsung Galaxy Font.jpeg" alt="" />
+              </li>
+              <li>
+                <img src="./imgs/brand/Lenovo Logo .jpeg" alt="" />
+              </li>
+              <li>
+                <img src="./imgs/brand/Samsung Logo .jpeg" alt="" />
+              </li>
+              <li>
+                <img src="./imgs/brand/Playstation.jpeg" alt="" />
+              </li>
+              <li>
+                <img
+                  src="./imgs/brand/new google logo introduced as part of its identity update.jpeg"
+                  alt=""
+                />
+              </li>
+              <li>
+                <img src="./imgs/brand/xiaomi logo.jpeg" alt="" />
+              </li>
+              <li>
+                <img src="./imgs/brand/Sony.jpeg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </section>
+      </footer>
+      <div class="bg-footer">
+        <div class="container">
+          <!-- Footer Links -->
+          <div class="footer-links-box py-5">
+            <div class="row g-4 d-flex justify-content-center align-items-center">
+              <!-- Logo & Contact Info -->
+              <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+                <h2 class="text-warning">OneTech</h2>
+                <p class="fw-bold">Got Question? Call Us 24/7</p>
+                <a href="tel:+201023456789" class="text-main-color">+20 102 345 6789</a>
+                <a href="mailto:Team4@gmail.com" class="text-main-color">Team4@gmail.com</a>
+                <p>Gharbia-ITI-Tanta Branch</p>
+                <div class="d-flex gap-2">
+                  <a href="#"><i class="fa-brands fa-facebook-f icon-link facebook"></i></a>
+                  <a href="#"><i class="fa-brands fa-x-twitter icon-link x-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube icon-link youtoub"></i></a>
+                  <a href="#"><i class="fa-brands fa-google icon-link google"></i></a>
+                </div>
+              </div>
+      
+              <!-- Find it Fast -->
+              <div class="col-6 col-lg-4">
+                <h6 class="fw-bold">Find it Fast</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                  <li>
+                    <a href="#" class="text-secondary small">Computers & Laptops</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary small">Smartphones & Tablets</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary small">Cameras & Photography</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary small">Home Appliances</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-secondary small">Gaming Consoles</a>
+                  </li>
+                </ul>
+              </div>
+      
+              <!-- Customer Care -->
+              <div class="col-6 col-lg-4">
+                <h6 class="fw-bold">Shopping Tools</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                  <li>
+                    <a href="registration.html" class="text-secondary small">Register</a>
+                  </li>
+                  <li><a href="products.html" class="text-secondary small">Shop</a></li>
+                  <li>
+                    <a href="Cart-Page.html" class="text-secondary small">Cart</a>
+                  </li>
+                  <li>
+                    <a href="wish.html" class="text-secondary small">Wish List</a>
+                  </li>
+                  <li>
+                    <a href="#footer" class="text-secondary small">Customer Services</a>
+                  </li>
+                  <!-- <li><a href="#" class="text-secondary small">FAQs</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Copyright -->
+          <div class="copyright container py-4 d-flex justify-content-between align-items-center flex-column flex-md-row">
+            <p class="small text-secondary mb-2 mb-md-0">
+              Copyright ©2025 All rights reserved | Made by
+              <span class="text-main-color">Team-4</span>
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#"><img src="./imgs/footer1.webp" alt="payment1" /></a>
+              <a href="#"><img src="./imgs/footer2.webp" alt="payment2" /></a>
+              <a href="#"><img src="./imgs/footer3.webp" alt="payment3" /></a>
+              <a href="#"><img src="./imgs/footer4.webp" alt="payment4" /></a>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Aside -->
+    <!-- upperArrow -->
+    <aside class="arrowUp">
+      <a
+        href="#"
+        class="d-block w-100 h-100 d-flex align-items-center justify-content-center"
+        ><i class="fa-solid fa-chevron-up fa-xl arrowCircle"></i
+      ></a>
+    </aside>
+
+  <!-- new Toast By Tarek  -->
+    <div id="parentToast" class="position-fixed top-0 end-0 p-3" style="z-index: -1; margin-top: 100px; width: 280px;">
+      <div id="liveToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body fw-bold">
+            تم إضافة المنتج إلى المفضلة
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  <!-- new Toast By Tarek  -->
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/jq-3-7-1.min.js"></script>
+    <script src="JS/pdetails.js"></script>
+    <script src="JS/wish.js"></script>
+    <script src="JS/showLoaclProducts.js"></script>
+    <script>
+      // Filter Categories
+      // $(".filter .dropdown-item").click(function (e) {
+      //   e.preventDefault();
+
+      //   let category = $(this).text().toLowerCase();
+      //   let categoryText = $(this).text();
+      //   $("#categoryDropdown").text(categoryText);
+      //   if (category === "all") {
+      //     $(".all-products .card").show(300); // Show all
+      //   } else {
+      //     $(".all-products .card").hide(); // hide all
+      //     $(".all-products ." + category).show(300); //  show only selected
+      //   }
+      // });
+      //  Products Search Logic
+
+
+      $(document).on("click", ".favorite-icon", function () {
+        if (
+          localStorage.getItem("currentUser") &&
+          localStorage.getItem("currentUser") != '"none"'
+        ) {
+          $(this).toggleClass("active-favorite");
+          $(this).parent().toggleClass("favorite-item");
+            // new animation by Tarek
+            const icon = $(this);
+            icon.addClass("bounce-once");
+            setTimeout(() => icon.removeClass("bounce-once"), 400);
+            // new animation by Tarek
+
+        } else {
+          showBootstrapToast("You have to login first.", "warning");
+        }
+      });
+
+
+
+      //updated Cart code  Done By Maryam Mohamed -->only js no jquery
+
+
+      if (!localStorage.getItem("currentUser")) {
+        localStorage.setItem("currentUser", JSON.stringify("none"));
+      }
+      
+      
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      // const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const allProducts =
+        JSON.parse(localStorage.getItem("localProducts")) || [];
+      const buttons = document.querySelectorAll(".add-cart-btn");
+
+      function updateCartCounter() {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const userId = currentUser?.userId;
+        const currentCart = (JSON.parse(localStorage.getItem("cart")) || []).filter(
+          (item) => item.customerId == userId
+        );
+        let totalItems = 0;
+
+        currentCart.forEach((item) => {
+          totalItems += item.quantity;
+        });
+
+        const counterElement = document.querySelector(".num-cart");
+        if (counterElement) {
+          counterElement.textContent = totalItems;
+        }
+      }
+
+      updateCartCounter();
+
+        // New Fun toast by Tarek
+    function showBootstrapToast(message, type = "success") {
+      const toastElement = document.getElementById("liveToast");
+      const toastBody = toastElement.querySelector(".toast-body");
+      const parentToast = document.getElementById("parentToast");
+      parentToast.style.zIndex="1100"
+      // غير الرسالة
+      toastBody.textContent = message;
+
+      // غيّر اللون حسب النوع (success, danger, info...)
+      toastElement.className = `toast align-items-center text-white bg-${type} border-0`;
+
+      const toast = new bootstrap.Toast(toastElement);
+      toast.show();
+    }
+
+  // New Fun toast by Tarek
+
+
+      buttons.forEach((button) => {
+        const title = button.dataset.title?.trim();
+
+        const updateButton = (inCart) => {
+          if (inCart) {
+            button.textContent = "Remove From Cart";
+            button.style.backgroundColor = "var(--text-color) !important";
+            button.closest(".product-item")?.classList.add("new-cart-item");
+          } else {
+            button.textContent = "Add to Cart";
+            button.style.backgroundColor = "var(--primary-color)";
+            button.closest(".product-item")?.classList.remove("new-cart-item");
+          }
+        };
+        
+        // Initialize button state based on cart
+        
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const userId = currentUser?.userId;
+        updateButton(cart.some(
+          (item) => item.customerId === userId && item.title === title
+        ));
+
+        // updateButton(cart.filter((item) => item.customerId == JSON.parse(localStorage.getItem("currentUser")).userId).some((item) => item.title === title));
+        // updateButton(cart.some((item) => item.title === title));
+        
+        button.addEventListener("click", () => {
+          showBootstrapToast("Item added to Cart.", "success");
+          const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+          // const existingItemIndex = currentCart.findIndex(
+          //   (item) => item.title === title
+          // );
+          const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+          const userId = currentUser?.userId;
+          const existingItemIndex = currentCart.findIndex(
+            (item) => item.title === title && item.customerId === userId
+          );
+
+          
+          if (existingItemIndex !== -1) {
+            showBootstrapToast("Item removed from Cart.", "danger");
+            currentCart.splice(existingItemIndex, 1);
+            updateButton(false);
+          } else {
+            const product = allProducts.find((p) => p.title === title);
+            if (!product) return alert("Product not found.");
+
+            currentCart.push({
+              title: product.title,
+              price: parseFloat(product.price.replace(/[^\d.]/g, "")),
+              image: product.image[0],
+              sellerId: product.sellerId,
+              stock: product.stock,
+              customerId: (JSON.parse(localStorage.getItem("currentUser")).userId),
+              quantity: 1,
+              about: product.about,
+            });
+            updateButton(true);
+          }
+
+          localStorage.setItem("cart", JSON.stringify(currentCart));
+          updateCartCounter();
+        });
+      });
+
+      const brandsScroller = document.querySelector(".brands-flex");
+      const brandsInner = Array.from(brandsScroller.children);
+
+      brandsInner.forEach((brandI) => {
+        const dupl = brandI.cloneNode(true);
+        brandsScroller.appendChild(dupl);
+      });
+      //  Aside arrow Section  //
+      const arrow = document.querySelector(".arrowUp");
+
+      window.addEventListener("scroll", () => {
+        // Show arrow when scrolled down 200px from top
+        if (window.pageYOffset > 200) {
+          arrow.classList.add("showArrow");
+        } else {
+          arrow.classList.remove("showArrow");
+        }
+      });
+      // Smooth scroll to top when clicked
+      arrow.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+      // const arrow = document.querySelector(".arrowUp");
+      // const header = document.getElementById("header");
+
+      // window.addEventListener("scroll", () => {
+      //   if (header.getBoundingClientRect().bottom < 0) {
+      //     arrow.classList.add("showArrow");
+      //   } else {
+      //     arrow.classList.remove("showArrow");
+      //   }
+      // });
+    </script>
+    <script src="JS/product.js"></script>
+    <script src="JS/wish.js"></script>
+    <script src="JS/checkUserRole.js"></script>
+    <script src="JS/home-search.js"></script>
+  </body>
+</html>

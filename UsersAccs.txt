@@ -1,0 +1,13 @@
+Admin
+ahmed@gmail.com
+admin123
+
+Seller
+tarek@gmail.com
+123456
+
+Customer
+tarek1@gmail.com
+123456
+
+**** All rest Accounts found in browser localStorage = usersData ******
